@@ -48,23 +48,23 @@ module.exports={
 			let Polls = await Poll.findById(id)
 			let options = [...Polls.options]
 			let result=[]
-			/*options.forEach(option=>{
+			options.forEach(option=>{
 				let parcentage = (option.vote*100)/Polls.totalVote
 				result.push({
 					...option._doc,
 					parcentage:parcentage ? parcentage : 0
 				})
-			})*/
-			for ( i = 0; i<options.length;i++) {
+			})
+			/*for ( i = 0; i<options.length;i++) {
 				let option = options[i].vote
 				let parcentage = (option*100)/Polls.totalVote
 				result.push({
 					...options._doc,
 					parcentage:parcentage ? parcentage : 0
 				})
-			}
-			console.log(chalk.blue.bgRed.bold(Polls))
-			console.log(Poll.options)
+			}*/
+			//console.log(chalk.blue.bgRed.bold(Polls))
+			//console.log(Poll.options)
 			res.render('ViewPolls.ejs',{Polls,result})
 		}catch(err){
 			console.log(err)
